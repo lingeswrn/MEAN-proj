@@ -1,0 +1,38 @@
+
+<html ng-app="myApp">
+	<head>
+		 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+	</head>
+	<body ng-controller="appCtrl">
+		<div class="container" >
+			
+			<table class="table">
+				<thead>
+					<tr>
+						<td>Name</td>
+						<td>Email</td>
+						<td>Number</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="text" class="form-control" ng-model="contact.name"></td>
+						<td><input type="text" class="form-control" ng-model="contact.email"></td>
+						<td><input type="text" class="form-control" ng-model="contact.number"></td>
+						<td><a href="" class="glyphicon glyphicon-plus" ng-click="addcontact()"></a></td>
+						<td><a href="" class="glyphicon glyphicon-pencil" ng-click="update()"></a></td>
+					</tr>
+					<tr ng-repeat="val in contactlist">
+						<td>{{val.name}}</td>
+						<td>{{val.email}}</td>
+						<td>{{val.number}}</td>
+						<td><a href="" class="glyphicon glyphicon-trash" ng-click="remove(val._id)"></a></td>
+						<td><a href="" class="glyphicon glyphicon-edit" ng-click="edit(val._id)"></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script src="controllers/list.js"></script>
+	</body>	
+</html>
